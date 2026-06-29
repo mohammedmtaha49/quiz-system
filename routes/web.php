@@ -17,4 +17,6 @@ Route::controller(AuthController::class)->group(function () {
 Route::controller(AdminController::class)->middleware('admin')
 ->group(function() {
     Route::get('dashboard', 'dashboard')->name('dashboard');
+    Route::get('categories', 'categories')->name('categories');
+    Route::get('logout', 'logout')->name('logout');
 });
