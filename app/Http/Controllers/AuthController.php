@@ -4,24 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Http\Requests\RegisterRequest;
 
 class AuthController extends Controller
 {
     public function login()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     public function storeLogin(Request $request)
     {
         $request->validate([
-            'name'     => 'required',
+            'email'     => 'required',
             'password' => 'required'
         ]);
 
         $credentials = [
-            'name'     => $request->name,
+            'email'     => $request->email,
             'password' => $request->password
         ];
 
@@ -34,6 +36,26 @@ class AuthController extends Controller
         return redirect()->back()->with(
             'error',
             'name or password is incorrect'
+        );
+    }
+
+    public function register()
+    {
+        return view('auth.register');
+    }
+
+    public function storeRegister(RegisterRequest $request)
+    {
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 'user',
+        ]);
+
+        return redirect()->route('login')->with(
+            'success', 
+            'Your account has been created successfully . Please Log in .'
         );
     }
 }

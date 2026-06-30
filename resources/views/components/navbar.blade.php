@@ -10,7 +10,7 @@
                 Dashboard
             </a>
             <a class=" text-gray-700 hover:text-blue-500"
-                href="{{ route('categories') }}">
+                href="{{ route('categories.index') }}">
                 Categories
             </a>
             <a class=" text-gray-700 hover:text-blue-500"
