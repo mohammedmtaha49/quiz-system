@@ -1,27 +1,27 @@
 <nav class=" bg-white shadow-md px-4 py-3">
     <div class=" flex justify-between items-center">
-        <div class=" text-2xl text-gray-700
-                hover:text-blue-500 cursor-pointer">
+        <div class=" font-semibold text-4xl text-gray-700
+                      hover:text-blue-500 cursor-pointer">
             Quiz System
         </div>
         <div class=" space-x-4">
-            <a class=" text-gray-700 hover:text-blue-500"
+            <a class=" text-gray-700 font-medium hover:text-blue-500"
                 href="{{ route('dashboard') }}">
                 Dashboard
             </a>
-            <a class=" text-gray-700 hover:text-blue-500"
+            <a class=" text-gray-700 font-medium hover:text-blue-500"
                 href="{{ route('categories.index') }}">
                 Categories
             </a>
-            <a class=" text-gray-700 hover:text-blue-500"
+            <a class=" text-gray-700 font-medium hover:text-blue-500"
                 href="">
                 Quiz
             </a>
-            <a class=" text-gray-700 hover:text-blue-500"
+            <a class=" text-gray-700 font-medium hover:text-blue-500"
                 href="">
                 Welcome {{ $name }}
             </a>
-            <a class=" text-gray-700 hover:text-blue-500"
+            <a class=" text-gray-700 font-medium hover:text-blue-500"
                 href="{{ route('logout') }}">
                 Logout
             </a>

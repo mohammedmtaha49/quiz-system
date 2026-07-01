@@ -5,7 +5,7 @@
 @section('content')
 
 <body>
-    <x-navbar :name="$admin->name"></x-navbar>
+    <x-navbar></x-navbar>
 </body>
 
 @endsection

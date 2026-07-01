@@ -5,17 +5,15 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use Illuminate\Support\Facades\Auth;
 
-class navbar extends Component
+class input extends Component
 {
-    public string $name;
     /**
      * Create a new component instance.
      */
-    public function __construct($name=null)
+    public function __construct()
     {
-        $this->name = Auth::user()->name;
+        //
     }
 
     /**
@@ -23,6 +21,6 @@ class navbar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.navbar');
+        return view('components.input');
     }
 }

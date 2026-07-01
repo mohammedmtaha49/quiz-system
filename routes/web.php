@@ -24,3 +24,7 @@ Route::controller(AdminController::class)->middleware('admin')
 
 Route::resource('categories', CategoryController::class)
     ->middleware('admin');
+Route::get(
+        'categories/{category}/confirm-delete',
+        [CategoryController::class,'confirmDelete']
+        )->middleware('admin')->name('categories.confirm-delete');
